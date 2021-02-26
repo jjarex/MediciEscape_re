@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     public float speed = 5;
     void Start()
     {
-        
+
     }
 
     void Update()
