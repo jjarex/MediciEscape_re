@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
         Move,
         Test,
         Happy
-    }    
+    }
     public State state;
 
     void Update()
@@ -25,14 +25,18 @@ public class Enemy : MonoBehaviour
         switch (state)
         {
             case State.Search:
-                UpdateSearch();break;
+                UpdateSearch(); break;
             case State.Move:
-                UpdateMove();break; 
+                UpdateMove(); break;
             case State.Test:
-                UpdateTest();break;
+                UpdateTest(); break;
             case State.Happy:
-                UpdateHappy();break;
+                UpdateHappy(); break;
         }
+        if (state == State.Test)
+            Timer.instance.pause = true;
+        else
+            Timer.instance.pause = false;
     }
 
     private void UpdateSearch()
@@ -49,6 +53,6 @@ public class Enemy : MonoBehaviour
 
     private void UpdateHappy()
     {
-        Timer.instance.currentTime +=30;
+        Timer.instance.currentTime += 30;
     }
 }
