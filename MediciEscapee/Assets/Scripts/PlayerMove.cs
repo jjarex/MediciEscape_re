@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         Vector2 dir2 = move.GetAxis(SteamVR_Input_Sources.LeftHand);
-        print(dir2);
+        //print(dir2);
         float movex = dir2.x;
         float movey = dir2.y;
         Vector3 dir3 = new Vector3(movex, 0, movey);

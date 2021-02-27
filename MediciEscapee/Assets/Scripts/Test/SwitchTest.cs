@@ -15,12 +15,15 @@ public class SwitchTest : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        isOn = true;
+        isOn = !isOn;
         if (isOn)
         {
-            isOn = !isOn;
             spotLight.SetActive(false);
             mainLight.SetActive(true);
+        }else
+        {
+            spotLight.SetActive(true);
+            mainLight.SetActive(false);
         }
     }
 }
