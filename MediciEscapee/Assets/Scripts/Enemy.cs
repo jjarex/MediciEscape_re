@@ -45,21 +45,12 @@ public class Enemy : MonoBehaviour
 
     private void UpdatePatrol()
     {
-        //int r = UnityEngine.Random.Range(0, wayPoints.Length);
-        //float distance = Vector3.Distance(transform.position, agent.transform.position);
-        //if (distance <= agent.stoppingDistance)
-        //{
-        //    r++;
-        //    if (distance == wayPoints.Length)
-        //        agent.destination = wayPoints[r].position;
-        //    r = 0;
-        //}
         agent.destination = destinaion.transform.position;
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hitinfo;
         if (Physics.Raycast(ray, out hitinfo))
         {
-            if (hitinfo.transform == player)
+            if (hitinfo.transform.CompareTag("Player"))
             {
                 state = State.Chase;
             }
@@ -81,6 +72,14 @@ public class Enemy : MonoBehaviour
     private void UpdateQuiz()
     {
         player.GetComponent<PlayerMove>().catched = true;
+        if (player.GetComponent<PlayerMove>().quiz)
+        {
+            state = State.Happy;
+        }
+        else
+        {
+            //플레이어 게임오버
+        }
     }
 
     private void UpdateHappy()
