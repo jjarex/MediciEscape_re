@@ -30,15 +30,15 @@ public class Flashlight : MonoBehaviour
                     On();
                 }
             }
-            //if (grip.GetActive(SteamVR_Input_Sources.LeftHand))
-            //{
-            //    transform.parent = other.transform;
-            //    //transform.position = new Vector3(,,);
-            //    if (teleport.GetActive(SteamVR_Input_Sources.LeftHand))
-            //    {
-            //        On();
-            //    }
-            //}
+            if (grip.GetActive(SteamVR_Input_Sources.LeftHand))
+            {
+                transform.parent = other.transform;
+                //transform.position = new Vector3(,,);
+                if (teleport.GetActive(SteamVR_Input_Sources.LeftHand))
+                {
+                    On();
+                }
+            }
         }
     }
     void On()

@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
     NavMeshAgent agent;
     public GameObject player;
-    public Transform exit;
+    public Transform destinaion;
     public float chaseSpeed=100;
     public enum State
     {
@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
 
     private void UpdatePatrol()
     {
-        agent.destination = exit.transform.position;
+        agent.destination = destinaion.transform.position;
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hitinfo;
         if (Physics.Raycast(ray, out hitinfo))
