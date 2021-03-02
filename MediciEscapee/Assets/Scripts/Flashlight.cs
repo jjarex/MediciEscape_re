@@ -21,7 +21,7 @@ public class Flashlight : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-                if (teleport.GetStateDown(SteamVR_Input_Sources.RightHand))
+                if (teleport.GetState(SteamVR_Input_Sources.RightHand))
                 {
                     On();
                 }
