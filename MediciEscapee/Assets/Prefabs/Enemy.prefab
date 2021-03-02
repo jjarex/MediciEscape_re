@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  destinaion: {fileID: 0}
+  exit: {fileID: 0}
   chaseSpeed: 100
   state: 0
 --- !u!195 &231322274940644850
@@ -132,5 +132,5 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 1
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 8
   m_ObstacleAvoidanceType: 4
