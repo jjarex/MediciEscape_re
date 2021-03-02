@@ -21,14 +21,14 @@ public class Flashlight : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (grip.GetActive(SteamVR_Input_Sources.RightHand))
-            {
-                transform.parent = other.transform;
-                //transform.position = new Vector3(,,);
-                if (teleport.GetActive(SteamVR_Input_Sources.RightHand))
+                if (teleport.GetStateDown(SteamVR_Input_Sources.RightHand))
                 {
                     On();
                 }
+            if (grip.GetState(SteamVR_Input_Sources.RightHand))
+            {
+                transform.parent = other.transform;
+                //transform.position = new Vector3(,,);
             }
             if (grip.GetActive(SteamVR_Input_Sources.LeftHand))
             {

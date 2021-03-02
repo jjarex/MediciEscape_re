@@ -14,8 +14,8 @@ public class EnemyManager : MonoBehaviour
             Destroy(other.gameObject);
             GameObject enemy = Instantiate(enemyFactory);
             enemy.transform.position = otherPoint.position;
-            //enemy.GetComponents<Enemy>();
-            //enemy.GetComponents<NavMeshAgent>();
+            enemy.GetComponent<Enemy>().enabled=true;
+            enemy.GetComponent<NavMeshAgent>().enabled=true;
         }
     }
 }

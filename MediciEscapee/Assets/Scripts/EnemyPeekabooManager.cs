@@ -13,16 +13,23 @@ public class EnemyPeekabooManager : MonoBehaviour
     AudioSource gigglingSFX;
     void Start()
     {
-        gigglingSFX = GetComponent<AudioSource>();
-        GameObject enemySample = Instantiate(peekabooEnemy);
-        agentSample = enemySample.GetComponent<NavMeshAgent>();
-        agentSample.destination = player.transform.position;
+        //gigglingSFX = GetComponent<AudioSource>();
+        //GameObject enemySample = Instantiate(peekabooEnemy);
+        //agentSample = enemySample.GetComponent<NavMeshAgent>();
+        //agentSample.destination = player.transform.position;
+        GameObject enemy = Instantiate(peekabooEnemy);
+        agent = enemy.GetComponent<NavMeshAgent>();
+        float px = player.transform.position.x;
+        float py = player.transform.position.y;
+        float pz = player.transform.position.z;
+        enemy.transform.position = /*new Vector3(px, 12, pz - 0.1f)*/player.transform.position;
+        agent.destination = player.transform.position;
     }
 
     void Update()
     {
-
-        StartCoroutine("ieCreateEnemy");
+        //enemy.transform.parent = playerHand.transform;
+        //StartCoroutine("ieCreateEnemy");
     }
     IEnumerator ieCreateEnemy()
     {
@@ -30,7 +37,10 @@ public class EnemyPeekabooManager : MonoBehaviour
         GameObject enemy = Instantiate(peekabooEnemy);
         agent = enemy.GetComponent<NavMeshAgent>();
         //enemy.transform.parent = playerHand.transform;
-        enemy.transform.position = player.transform.position;
+        float px = player.transform.position.x;
+        float py = player.transform.position.y;
+        float pz = player.transform.position.z;
+        enemy.transform.position =new Vector3(px,py,pz-1.5f);
         agent.destination = player.transform.position;
         yield return new WaitForSeconds(createTime);
     }
