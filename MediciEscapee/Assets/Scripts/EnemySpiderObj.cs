@@ -15,11 +15,12 @@ public class EnemySpiderObj : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            //플레이어 게임오버
+            //플레이어 게임오버&에님
         }
     }
 }

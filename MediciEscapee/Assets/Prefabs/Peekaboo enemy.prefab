@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5801256509312896803
+--- !u!1 &1635810197033108247
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5801256509312896807}
-  - component: {fileID: 5801256509312896800}
-  - component: {fileID: 5801256509312896801}
-  - component: {fileID: 5801256509312896802}
+  - component: {fileID: 1635810197033108243}
+  - component: {fileID: 1635810197033108244}
+  - component: {fileID: 1635810197033108245}
+  - component: {fileID: 1635810197033108246}
   m_Layer: 0
   m_Name: Peekaboo Enemy
   m_TagString: Untagged
@@ -19,35 +19,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5801256509312896807
+--- !u!4 &1635810197033108243
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801256509312896803}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.5}
+  m_GameObject: {fileID: 1635810197033108247}
+  m_LocalRotation: {x: -0, y: 0.5906044, z: -0, w: 0.80696124}
+  m_LocalPosition: {x: 0, y: 3, z: -2}
   m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
-  m_Father: {fileID: 5801256510367737080}
+  m_Father: {fileID: 6451842464182669948}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5801256509312896800
+--- !u!33 &1635810197033108244
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801256509312896803}
+  m_GameObject: {fileID: 1635810197033108247}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5801256509312896801
+--- !u!23 &1635810197033108245
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801256509312896803}
+  m_GameObject: {fileID: 1635810197033108247}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -80,13 +80,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &5801256509312896802
+--- !u!136 &1635810197033108246
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801256509312896803}
+  m_GameObject: {fileID: 1635810197033108247}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -94,7 +94,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &5801256510367737081
+--- !u!1 &8401194952084627916
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,54 +102,68 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5801256510367737080}
-  - component: {fileID: 5801256510367737087}
+  - component: {fileID: 6451842464182669948}
+  - component: {fileID: 9010158333714663951}
+  - component: {fileID: 186692495144051699}
   m_Layer: 0
-  m_Name: PeekabooEnemy
+  m_Name: Peekaboo enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5801256510367737080
+--- !u!4 &6451842464182669948
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801256510367737081}
-  m_LocalRotation: {x: 0.0038493779, y: 0.26966655, z: -0.0060178624, w: 0.96292734}
-  m_LocalPosition: {x: 29.229494, y: 1.4994416, z: -14.510116}
+  m_GameObject: {fileID: 8401194952084627916}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.04, y: 0, z: -5.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5801256509312896807}
-  - {fileID: 5801256511183139686}
+  - {fileID: 1635810197033108243}
+  - {fileID: 4003006573714677178}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &5801256510367737087
+--- !u!195 &9010158333714663951
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801256510367737081}
+  m_GameObject: {fileID: 8401194952084627916}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5000039
-  m_Speed: 1
+  m_Radius: 0.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1.5
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2.0000002
-  m_BaseOffset: 1.0000001
+  m_Height: 2
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!1 &5801256511183139687
+--- !u!114 &186692495144051699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8401194952084627916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98439eb604628114c9016a0f9b0acd63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+--- !u!1 &8965025657188099158
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,47 +171,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5801256511183139686}
-  - component: {fileID: 5801256511183139674}
-  - component: {fileID: 5801256511183139675}
-  - component: {fileID: 5801256511183139684}
-  - component: {fileID: 5801256511183139685}
+  - component: {fileID: 4003006573714677178}
+  - component: {fileID: 3948730043849797782}
+  - component: {fileID: 7099926190985051238}
+  - component: {fileID: 2454562482629025670}
+  - component: {fileID: 1925864728516628537}
   m_Layer: 0
-  m_Name: Hand
+  m_Name: trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5801256511183139686
+--- !u!4 &4003006573714677178
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801256511183139687}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: -1.5}
+  m_GameObject: {fileID: 8965025657188099158}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 4, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5801256510367737080}
+  m_Father: {fileID: 6451842464182669948}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5801256511183139674
+--- !u!33 &3948730043849797782
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801256511183139687}
+  m_GameObject: {fileID: 8965025657188099158}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5801256511183139675
+--- !u!23 &7099926190985051238
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801256511183139687}
+  m_GameObject: {fileID: 8965025657188099158}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -230,28 +244,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &5801256511183139684
+--- !u!135 &2454562482629025670
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801256511183139687}
+  m_GameObject: {fileID: 8965025657188099158}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5801256511183139685
+--- !u!114 &1925864728516628537
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801256511183139687}
+  m_GameObject: {fileID: 8965025657188099158}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43f081a5334ae9a4db893ac7f1e00d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  peekabooEnemy: {fileID: 8401194952084627916}

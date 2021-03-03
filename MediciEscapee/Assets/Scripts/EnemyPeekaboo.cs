@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyPeekaboo : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public GameObject player;
+    NavMeshAgent agent;
+    void Start()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            //에님&피카부에너미 디스트로이
-        }
+        agent = GetComponent<NavMeshAgent>();
+        transform.position = Camera.main.transform.position;
+    }
+
+    void Update()
+    {
+        agent.destination = Camera.main.transform.position;
     }
 }

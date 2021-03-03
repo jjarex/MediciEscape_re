@@ -10,7 +10,6 @@ public class PlayerMove : MonoBehaviour
     public float speed = 5;
     State state;
     public bool catched;
-    public bool quiz;
     public enum State
     {
         Move,
@@ -39,6 +38,7 @@ public class PlayerMove : MonoBehaviour
 
     private void UpdateQuiz()
     {
+
         //Quiz UI
     }
 

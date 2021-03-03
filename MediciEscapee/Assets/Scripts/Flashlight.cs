@@ -8,7 +8,7 @@ public class Flashlight : MonoBehaviour
     public SteamVR_Action_Boolean teleport;
 
     public GameObject[] lights;
-    bool on;
+    public bool on;
     void Start()
     {
         on = false;
@@ -21,20 +21,20 @@ public class Flashlight : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-                if (teleport.GetState(SteamVR_Input_Sources.RightHand))
-                {
-                    On();
-                }
             if (grip.GetState(SteamVR_Input_Sources.RightHand))
             {
                 transform.parent = other.transform;
                 //transform.position = new Vector3(,,);
+                if (teleport.GetState(SteamVR_Input_Sources.RightHand))
+                {
+                    On();
+                }
             }
-            if (grip.GetActive(SteamVR_Input_Sources.LeftHand))
+            if (grip.GetState(SteamVR_Input_Sources.LeftHand))
             {
                 transform.parent = other.transform;
                 //transform.position = new Vector3(,,);
-                if (teleport.GetActive(SteamVR_Input_Sources.LeftHand))
+                if (teleport.GetState(SteamVR_Input_Sources.LeftHand))
                 {
                     On();
                 }

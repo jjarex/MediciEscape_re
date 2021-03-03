@@ -14,8 +14,7 @@ public class Enemy : MonoBehaviour
     {
         Patrol,
         Chase,
-        Quiz,
-        Happy
+        Catch
     }
     public State state;
     void Start()
@@ -32,15 +31,13 @@ public class Enemy : MonoBehaviour
                 UpdatePatrol(); break;
             case State.Chase:
                 UpdateChase(); break;
-            case State.Quiz:
-                UpdateQuiz(); break;
-            case State.Happy:
-                UpdateHappy(); break;
+            case State.Catch:
+                UpdateCatch(); break;
         }
-        if (state == State.Quiz)
-            Timer.instance.pause = true;
-        else
-            Timer.instance.pause = false;
+        //if (state == State.Quiz)
+        //    Timer.instance.pause = true;
+        //else
+        //    Timer.instance.pause = false;
     }
 
     private void UpdatePatrol()
@@ -65,27 +62,22 @@ public class Enemy : MonoBehaviour
         float distance = Vector3.Distance(transform.position, player.transform.position);
         if (distance<=agent.stoppingDistance)
         {
-            state = State.Quiz;
+            state = State.Catch;
         }
     }
 
-    private void UpdateQuiz()
+    private void UpdateCatch()
     {
         player.GetComponent<PlayerMove>().catched = true;
-        if (player.GetComponent<PlayerMove>().quiz)
-        {
-            state = State.Happy;
-        }
-        else
-        {
-            //플레이어 게임오버
-        }
+
+        //플레이어 타임차감&에님?
+        Timer.instance.currentTime -= 30;
     }
 
-    private void UpdateHappy()
-    {
-        Timer.instance.currentTime += 30;
+    //private void UpdateHappy()
+    //{
+    //    Timer.instance.currentTime += 30;
 
-        Destroy(gameObject, 5);
-    }
+    //    Destroy(gameObject, 5);
+    //}
 }
