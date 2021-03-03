@@ -8,41 +8,18 @@ public class PlayerMove : MonoBehaviour
 {
     public SteamVR_Action_Vector2 move;
     public float speed = 5;
-    State state;
     public bool catched;
-    public enum State
-    {
-        Move,
-        Quiz
-    }
     void Start()
     {
-        state = State.Move;
         catched = false;
     }
 
     void Update()
     {
-        switch (state)
-        {
-            case State.Move:
-                UpdateMove(); break; 
-            case State.Quiz:
-                UpdateQuiz(); break;
-        }
-        if (catched)
-        {
-            state = State.Quiz;
-        }
+        Move();
     }
 
-    private void UpdateQuiz()
-    {
-
-        //Quiz UI
-    }
-
-    private void UpdateMove()
+    private void Move()
     {
         Vector2 dir2 = move.GetAxis(SteamVR_Input_Sources.LeftHand);
         //print(dir2);
