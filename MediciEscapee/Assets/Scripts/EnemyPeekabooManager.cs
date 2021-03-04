@@ -14,17 +14,20 @@ public class EnemyPeekabooManager : MonoBehaviour
     void Start()
     {
         GameObject enemy = Instantiate(peekabooEnemy);
-        
+        StartCoroutine("ieCreateEnemy");
     }
 
     void Update()
     {
-        StartCoroutine("ieCreateEnemy");
+        
     }
     IEnumerator ieCreateEnemy()
     {
-        gigglingSFX.Play();
-        GameObject enemy = Instantiate(peekabooEnemy);
-        yield return new WaitForSeconds(createTime);
+        while (true)
+        {
+            //gigglingSFX.Play();
+            yield return new WaitForSeconds(createTime);
+            GameObject enemy = Instantiate(peekabooEnemy);
+        }
     }
 }

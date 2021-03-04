@@ -40,10 +40,10 @@ public class HandAnimatorManagerVR : MonoBehaviour
 			currentState = (currentState + 1) % (numberOfAnimations + 1);
 		}
 
-		if (Input.GetAxis (holdKey) > 0) {
-			hold = true;
-		} else
-			hold = false;
+		//if (Input.GetAxis (holdKey) > 0) {
+		//	hold = true;
+		//} else
+		//	hold = false;
 
 		if (Input.GetKey (actionKey)) {
 			action = true;
