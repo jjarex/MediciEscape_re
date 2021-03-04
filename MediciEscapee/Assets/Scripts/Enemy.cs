@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         state = State.Patrol;
+        player = GameObject.Find("Player");
     }
 
     void Update()
