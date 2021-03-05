@@ -90,7 +90,7 @@ public class Enemy : MonoBehaviour
     private void UpdateCatch()
     {
         anim.SetTrigger("Attack");
-        player.GetComponent<PlayerMove>().catched = true;
+        player.GetComponent<PlayerMove>().ChangState(2);
         Timer.instance.currentTime -= 30;
         StartCoroutine(ieGoHome());
     }
