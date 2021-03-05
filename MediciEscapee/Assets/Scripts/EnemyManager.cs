@@ -11,11 +11,11 @@ public class EnemyManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject);
+            Destroy(other.transform.parent.gameObject);
             GameObject enemy = Instantiate(enemyFactory);
             enemy.transform.position = otherPoint.position;
-            enemy.GetComponent<Enemy>().enabled=true;
-            enemy.GetComponent<NavMeshAgent>().enabled=true;
+            //enemy.GetComponent<Enemy>().enabled=true;
+            //enemy.GetComponent<NavMeshAgent>().enabled=true;
         }
     }
 }

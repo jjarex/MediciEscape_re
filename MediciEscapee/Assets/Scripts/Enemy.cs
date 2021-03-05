@@ -7,20 +7,25 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     NavMeshAgent agent;
+    Animator anim;
     public GameObject player;
     public Transform destinaion;
-    public float chaseSpeed=100;
+    public float speed = 3;
+    public float chaseSpeed = 100;
     public enum State
     {
         Patrol,
         Chase,
-        Catch
+        Catch,
+        GoHome
     }
     public State state;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
         state = State.Patrol;
+        player = GameObject.Find("Player");
     }
 
     void Update()
@@ -33,6 +38,8 @@ public class Enemy : MonoBehaviour
                 UpdateChase(); break;
             case State.Catch:
                 UpdateCatch(); break;
+            case State.GoHome:
+                GoHome(); break;
         }
         //if (state == State.Quiz)
         //    Timer.instance.pause = true;
@@ -40,9 +47,22 @@ public class Enemy : MonoBehaviour
         //    Timer.instance.pause = false;
     }
 
+    private void UpdateGoHome()
+    {
+        
+    }
+
     private void UpdatePatrol()
     {
         agent.destination = destinaion.transform.position;
+        agent.speed = speed;
+        anim.SetTrigger("Walk");
+
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            state = State.Chase;
+        }
+
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hitinfo;
         if (Physics.Raycast(ray, out hitinfo))
@@ -58,20 +78,33 @@ public class Enemy : MonoBehaviour
     {
         agent.destination = player.transform.position;
         agent.speed *= chaseSpeed;
+        anim.SetTrigger("Run");
 
         float distance = Vector3.Distance(transform.position, player.transform.position);
-        if (distance<=agent.stoppingDistance)
+        //Debug.Log(distance);
+        if (distance <= 1.5f)
         {
             state = State.Catch;
         }
     }
-
     private void UpdateCatch()
     {
-        player.GetComponent<PlayerMove>().catched = true;
-
-        //플레이어 타임차감&에님?
+        anim.SetTrigger("Attack");
+        player.GetComponent<PlayerMove>().ChangState(2);
         Timer.instance.currentTime -= 30;
+        StartCoroutine(ieGoHome());
+    }
+    IEnumerator ieGoHome()
+    {
+        yield return new WaitForSeconds(3);
+        state = State.GoHome;
+    }
+    void GoHome()
+    {
+        //state = State.GoHome;
+        agent.destination = destinaion.transform.position;
+        agent.speed = speed;
+        anim.SetTrigger("walk");
     }
 
     //private void UpdateHappy()

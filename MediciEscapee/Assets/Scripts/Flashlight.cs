@@ -17,6 +17,23 @@ public class Flashlight : MonoBehaviour
             lights[i].SetActive(false);
         }
     }
+    private void Update()
+    {
+        if (on)
+        {
+            for (int i = 0; i < lights.Length; i++)
+            {
+                lights[i].SetActive(true);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < lights.Length; i++)
+            {
+                lights[i].SetActive(false);
+            }
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -44,19 +61,19 @@ public class Flashlight : MonoBehaviour
     void On()
     {
         on = !on;
-        if (on)
-        {
-            for (int i = 0; i < lights.Length; i++)
-            {
-                lights[i].SetActive(true);
-            }
-        }
-        else
-        {
-            for (int i = 0; i < lights.Length; i++)
-            {
-                lights[i].SetActive(false);
-            }
-        }
+        //if (on)
+        //{
+        //    for (int i = 0; i < lights.Length; i++)
+        //    {
+        //        lights[i].SetActive(true);
+        //    }
+        //}
+        //else
+        //{
+        //    for (int i = 0; i < lights.Length; i++)
+        //    {
+        //        lights[i].SetActive(false);
+        //    }
+        //}
     }
 }

@@ -6,25 +6,29 @@ using UnityEngine.AI;
 public class EnemyPeekabooManager : MonoBehaviour
 {
     public GameObject peekabooEnemy;
-    NavMeshAgent agent;
-    NavMeshAgent agentSample;
     public float createTime = 120;
     public GameObject player;
-     AudioSource gigglingSFX;
+    AudioSource gigglingSFX;
     void Start()
     {
-        GameObject enemy = Instantiate(peekabooEnemy);
-        
+        GameObject enemy = Instantiate(peekabooEnemy); //테스트
+        //StartCoroutine("ieCreateEnemy");
     }
 
     void Update()
     {
-        StartCoroutine("ieCreateEnemy");
+
     }
     IEnumerator ieCreateEnemy()
     {
-        gigglingSFX.Play();
-        GameObject enemy = Instantiate(peekabooEnemy);
-        yield return new WaitForSeconds(createTime);
+        while (true)
+        {
+            //gigglingSFX.Play();
+            yield return new WaitForSeconds(createTime);
+            GameObject enemy = Instantiate(peekabooEnemy);
+            Ray ray = new Ray(transform.position, -transform.forward);
+
+
+        }
     }
 }

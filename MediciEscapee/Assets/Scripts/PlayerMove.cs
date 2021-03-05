@@ -9,6 +9,19 @@ public class PlayerMove : MonoBehaviour
     public SteamVR_Action_Vector2 move;
     public float speed = 5;
     public bool catched;
+    public enum State
+    {
+            Move,
+            Catched,
+            Die
+    }
+    public State state;
+
+    public void ChangState(int index)
+    {
+        state = (State)index;
+    }
+
     void Start()
     {
         catched = false;
@@ -16,11 +29,30 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        Move();
+        switch (state)
+        {
+            case State.Move:
+                UpdateMove();break;
+            case State.Catched:
+                UpdateCatched();break;
+            case State.Die:
+                UpdateDie(); break;
+        }
     }
 
-    private void Move()
+    private void UpdateDie()
     {
+        //게임오버
+    }
+
+    private void UpdateCatched()
+    {
+        //데미지 UI
+        Invoke("UpdateMove", 3);
+    }
+    private void UpdateMove()
+    {
+        state = State.Move;
         Vector2 dir2 = move.GetAxis(SteamVR_Input_Sources.LeftHand);
         //print(dir2);
         float movex = dir2.x;
