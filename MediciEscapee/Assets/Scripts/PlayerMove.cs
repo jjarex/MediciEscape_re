@@ -9,6 +9,8 @@ public class PlayerMove : MonoBehaviour
     public SteamVR_Action_Vector2 move;
     public float speed = 5;
     public bool catched;
+    public GameObject gameOverUI;
+    public GameObject lightMain;
     public enum State
     {
             Move,
@@ -25,6 +27,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         catched = false;
+        gameOverUI.SetActive(false);
     }
 
     void Update()
@@ -38,16 +41,22 @@ public class PlayerMove : MonoBehaviour
             case State.Die:
                 UpdateDie(); break;
         }
+        if (Timer.instance.hour == 12)
+        {
+            state = State.Die;
+        }
     }
 
     private void UpdateDie()
     {
-        //게임오버
+        gameOverUI.SetActive(true);
+        lightMain.GetComponent<Light>().color = Color.red;
     }
 
     private void UpdateCatched()
     {
         //데미지 UI
+        lightMain.GetComponent<Light>().color = Color.red;
         Invoke("UpdateMove", 3);
     }
     private void UpdateMove()

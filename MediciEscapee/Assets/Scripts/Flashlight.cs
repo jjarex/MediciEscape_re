@@ -19,6 +19,11 @@ public class Flashlight : MonoBehaviour
     }
     private void Update()
     {
+        if (teleport.GetStateDown(SteamVR_Input_Sources.RightHand))
+        {
+            On();
+        }
+
         if (on)
         {
             for (int i = 0; i < lights.Length; i++)
@@ -34,46 +39,31 @@ public class Flashlight : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
+        void On()
         {
-            if (grip.GetStateDown(SteamVR_Input_Sources.RightHand))
-            {
-                transform.parent = other.transform;
-                //transform.position = new Vector3(,,);
-                if (teleport.GetStateDown(SteamVR_Input_Sources.RightHand))
-                {
-                    On();
-                }
-            }
-            if (grip.GetStateDown(SteamVR_Input_Sources.LeftHand))
-            {
-                transform.parent = other.transform;
-                //transform.position = new Vector3(,,);
-                if (teleport.GetStateDown(SteamVR_Input_Sources.LeftHand))
-                {
-                    On();
-                }
-            }
+            on = !on;
         }
-    }
-    void On()
-    {
-        on = !on;
-        //if (on)
-        //{
-        //    for (int i = 0; i < lights.Length; i++)
-        //    {
-        //        lights[i].SetActive(true);
-        //    }
-        //}
-        //else
-        //{
-        //    for (int i = 0; i < lights.Length; i++)
-        //    {
-        //        lights[i].SetActive(false);
-        //    }
-        //}
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Player"))
+    //    {
+    //        if (grip.GetStateDown(SteamVR_Input_Sources.RightHand))
+    //        {
+    //            transform.parent = other.transform;
+    //            //transform.position = new Vector3(,,);
+    //            if (teleport.GetStateDown(SteamVR_Input_Sources.RightHand))
+    //            {
+    //                On();
+    //            }
+    //        }
+    //        if (grip.GetStateDown(SteamVR_Input_Sources.LeftHand))
+    //        {
+    //            transform.parent = other.transform;
+    //            //transform.position = new Vector3(,,);
+    //            if (teleport.GetStateDown(SteamVR_Input_Sources.LeftHand))
+    //            {
+    //                On();
+    //            }
+    //        }
+    //    }
 }

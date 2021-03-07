@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
     public float startTime = 55;
     public float currentTime;
     public bool pause;
+    public int hour;
 
     public static Timer instance;
     private void Awake()
@@ -25,7 +26,7 @@ public class Timer : MonoBehaviour
     {
         if (pause == false)
             currentTime += Time.deltaTime;
-        int hour = 11;
+        hour = 11;
         int min = (int)(currentTime / 60);
         if (min == 0)
             hour++;
@@ -43,6 +44,7 @@ public class Timer : MonoBehaviour
 
         if (hour == 12)
         {
+           
             //GAMEOVER
         }
     }
