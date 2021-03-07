@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.mediciescapee.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\B0216\\Desktop\\GitHub\\MediciEscape_re\\MediciEscapee\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "D:\\Projects\\MediciEscapeFinal\\MediciEscapee\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "MediciEscapee [Testing]"
