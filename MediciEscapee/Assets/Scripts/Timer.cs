@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -47,5 +48,33 @@ public class Timer : MonoBehaviour
            
             //GAMEOVER
         }
+
+        
+
+        //Test();
     }
+
+    //private void Test()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Alpha1))
+    //    {
+    //        QRcord.instance.FindQRCord(0);
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.Alpha2))
+    //    {
+    //        QRcord.instance.FindQRCord(1);
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.Alpha3))
+    //    {
+    //        QRcord.instance.FindQRCord(2);
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.Alpha4))
+    //    {
+    //        QRcord.instance.FindQRCord(3);
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.Alpha5))
+    //    {
+    //        QRcord.instance.FindQRCord(4);
+    //    }
+    //}
 }
