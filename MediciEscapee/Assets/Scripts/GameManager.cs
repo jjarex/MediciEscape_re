@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Valve.VR;
 
 // 1. 태어날때 GameOver를 보이지 않게 하고싶다.
 // 2. Enemy와 Player가 충돌했을때 GameOver를 보이게 하고싶다.(싱글톤)
@@ -12,6 +13,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public SteamVR_Action_Boolean menu;
+    bool menuOn = false;
     // 싱글톤
     public static GameManager instance;
     private void Awake()
@@ -119,7 +122,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OnClickSetting();
-        OnClickMinimap();
+        if (menu.GetStateDown(SteamVR_Input_Sources.RightHand) || menu.GetStateDown(SteamVR_Input_Sources.LeftHand))
+            MenuOn();
+        if (menuOn)
+        {
+            OnClickSetting();
+            OnClickMinimap();
+        }
+    }
+    void MenuOn()
+    {
+        menuOn = !menuOn;
     }
 }

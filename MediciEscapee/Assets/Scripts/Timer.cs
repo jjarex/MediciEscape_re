@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
     public float currentTime;
     public bool pause;
     public int hour;
+    public  GameObject gameoverUI;
 
     public static Timer instance;
     private void Awake()
@@ -22,6 +23,8 @@ public class Timer : MonoBehaviour
     {
         currentTime = startTime * 60;
         pause = false;
+        gameoverUI.SetActive(false);
+
     }
     void Update()
     {
@@ -43,9 +46,9 @@ public class Timer : MonoBehaviour
         else
             second.text = "." + sec;
 
-        if (hour == 12)
+        if (hour >= 12)
         {
-           
+            gameoverUI.SetActive(true);
             //GAMEOVER
         }
 

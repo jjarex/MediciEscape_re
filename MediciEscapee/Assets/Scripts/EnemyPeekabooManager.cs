@@ -9,6 +9,11 @@ public class EnemyPeekabooManager : MonoBehaviour
     public float createTime = 120;
     public GameObject player;
     AudioSource gigglingSFX;
+    public static EnemyPeekabooManager instanse;
+    private void Awake()
+    {
+        instanse = this;
+    }
     void Start()
     {
         GameObject enemy = Instantiate(peekabooEnemy); //테스트

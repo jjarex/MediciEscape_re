@@ -12,6 +12,11 @@ public class Enemy : MonoBehaviour
     public Transform destinaion;
     public float speed = 3;
     public float chaseSpeed = 100;
+    public static Enemy instance;
+    private void Awake()
+    {
+        instance=this;
+    }
     public enum State
     {
         Patrol,

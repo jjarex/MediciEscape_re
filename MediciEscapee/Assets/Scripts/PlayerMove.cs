@@ -11,11 +11,16 @@ public class PlayerMove : MonoBehaviour
     public bool catched;
     public GameObject gameOverUI;
     public GameObject lightMain;
+    public static PlayerMove instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     public enum State
     {
-            Move,
-            Catched,
-            Die
+        Move,
+        Catched,
+        Die
     }
     public State state;
 
@@ -28,6 +33,8 @@ public class PlayerMove : MonoBehaviour
     {
         catched = false;
         gameOverUI.SetActive(false);
+        lightMain.GetComponent<Light>().enabled = false;
+
     }
 
     void Update()
@@ -35,9 +42,9 @@ public class PlayerMove : MonoBehaviour
         switch (state)
         {
             case State.Move:
-                UpdateMove();break;
+                UpdateMove(); break;
             case State.Catched:
-                UpdateCatched();break;
+                UpdateCatched(); break;
             case State.Die:
                 UpdateDie(); break;
         }
@@ -49,18 +56,22 @@ public class PlayerMove : MonoBehaviour
 
     private void UpdateDie()
     {
+        lightMain.GetComponent<Light>().enabled = true;
         gameOverUI.SetActive(true);
-        lightMain.GetComponent<Light>().color = Color.red;
+        lightMain.GetComponent<Light>().color = Color.black;
     }
 
     private void UpdateCatched()
     {
         //데미지 UI
+        lightMain.GetComponent<Light>().enabled = true;
         lightMain.GetComponent<Light>().color = Color.red;
-        Invoke("UpdateMove", 3);
+        Invoke("UpdateMove", 1);
     }
     private void UpdateMove()
     {
+        lightMain.GetComponent<Light>().enabled = false;
+
         state = State.Move;
         Vector2 dir2 = move.GetAxis(SteamVR_Input_Sources.LeftHand);
         //print(dir2);

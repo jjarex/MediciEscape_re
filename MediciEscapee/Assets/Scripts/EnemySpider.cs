@@ -6,7 +6,13 @@ using UnityEngine.AI;
 public class EnemySpider : MonoBehaviour
 {
     public GameObject spiderObj;
+    public float speed;
     NavMeshAgent agent;
+    public static EnemySpider instance;
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         //StartCoroutine(RandomMove());
@@ -15,6 +21,7 @@ public class EnemySpider : MonoBehaviour
     }
     void Update()
     {
+        speed = agent.speed;
         //print($"{agent.transform.position},{agent.destination}");
         float dist = Vector3.Distance(transform.position, agent.destination);
         if (dist <= 2)
