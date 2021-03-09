@@ -4,7 +4,7 @@ using UnityEngine;
 using Valve.VR;
 public class Flashlight : MonoBehaviour
 {
-    public SteamVR_Action_Boolean grip;
+    //public SteamVR_Action_Boolean grip;
     public SteamVR_Action_Boolean teleport;
 
     public GameObject[] lights;
