@@ -17,11 +17,11 @@ public class Grip : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             // 2. 내 반경 1M안의 충돌체 목록을 출력하고싶다.
-            Collider[] 충돌한목록 = Physics.OverlapSphere(transform.position, 1f);
+            Collider[] 충돌한목록 = Physics.OverlapSphere(transform.position, 4f);
             for (int i = 0; i < 충돌한목록.Length; i++)
             {
                 print(충돌한목록[i].gameObject.name);
-                if (충돌한목록[i].gameObject.name.Contains("SM_Prop_Chair_BeanBag_02"))
+                if (충돌한목록[i].gameObject.name.Contains("QRcode (2)"))
                 {
                     Destroy(충돌한목록[i].gameObject);
                 }

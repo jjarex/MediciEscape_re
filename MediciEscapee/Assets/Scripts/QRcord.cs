@@ -31,7 +31,7 @@ public class QRcord : MonoBehaviour
         if (isComplete)
         {
             // 다 켜졌으면 어쩌고 저쩌고
-            print("성공~!!!");
+            GameManager.instance.EscapeeUI.SetActive(true);
         }
     }
 

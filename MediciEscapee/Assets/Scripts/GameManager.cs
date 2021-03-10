@@ -39,6 +39,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject XUI;
 
+    public GameObject QuestionmarkUI;
+
+    public GameObject EscapeeUI;
     // Start is called before the first frame update
     void Start()
     {

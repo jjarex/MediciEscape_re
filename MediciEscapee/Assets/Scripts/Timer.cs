@@ -49,11 +49,16 @@ public class Timer : MonoBehaviour
 
         if (hour >= 12)
         {
-            //gameoverUI.SetActive(true);
             //GAMEOVER
+            GameManager.instance.gameOverUI.SetActive(true);
         }
 
-        
+        if (min == 59)
+        {
+            GameManager.instance.QuestionmarkUI.SetActive(false);
+        }
+
+
 
         //Test();
     }
