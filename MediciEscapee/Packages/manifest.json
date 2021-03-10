@@ -1,6 +1,5 @@
 {
-    "dependencies": {
-    "com.ptc.vuforia.engine": "git+https://git-packages.developer.vuforia.com#9.7.5",
+  "dependencies": {
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.formats.fbx": "3.2.1-preview.2",
     "com.unity.ide.rider": "1.1.4",
