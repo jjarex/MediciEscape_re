@@ -1,0 +1,166 @@
+fileFormatVersion: 2
+guid: d90ddfec81ed91240be3091b53c2f159
+timeCreated: 1506030123
+licenseType: Store
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Tulip_006
+    100004: Tulip_007
+    100006: Tulip_008
+    100008: Tulip_009
+    100010: Tulip_010
+    100012: Tulip_011
+    100014: Tulip_012
+    100016: Tulip_013
+    100018: Object013
+    100020: Object014
+    100022: Object015
+    100024: Object016
+    100026: Tulip_01
+    100028: Tulip_002
+    100030: Tulip_003
+    100032: Tulip_004
+    400000: //RootNode
+    400002: Tulip_006
+    400004: Tulip_007
+    400006: Tulip_008
+    400008: Tulip_009
+    400010: Tulip_010
+    400012: Tulip_011
+    400014: Tulip_012
+    400016: Tulip_013
+    400018: Object013
+    400020: Object014
+    400022: Object015
+    400024: Object016
+    400026: Tulip_01
+    400028: Tulip_002
+    400030: Tulip_003
+    400032: Tulip_004
+    2300000: //RootNode
+    2300002: Tulip_006
+    2300004: Tulip_007
+    2300006: Tulip_008
+    2300008: Tulip_009
+    2300010: Tulip_010
+    2300012: Tulip_011
+    2300014: Tulip_012
+    2300016: Tulip_013
+    2300018: Object013
+    2300020: Object014
+    2300022: Object015
+    2300024: Object016
+    2300026: Tulip_01
+    2300028: Tulip_002
+    2300030: Tulip_003
+    2300032: Tulip_004
+    3300000: //RootNode
+    3300002: Tulip_006
+    3300004: Tulip_007
+    3300006: Tulip_008
+    3300008: Tulip_009
+    3300010: Tulip_010
+    3300012: Tulip_011
+    3300014: Tulip_012
+    3300016: Tulip_013
+    3300018: Object013
+    3300020: Object014
+    3300022: Object015
+    3300024: Object016
+    3300026: Tulip_01
+    3300028: Tulip_002
+    3300030: Tulip_003
+    3300032: Tulip_004
+    4300000: Tulip_01
+    4300002: Tulip_008
+    4300004: Tulip_006
+    4300006: Tulip_007
+    4300008: Tulip_009
+    4300010: Tulip_010
+    4300012: Tulip_011
+    4300014: Tulip_012
+    4300016: Tulip_013
+    4300018: Object013
+    4300020: Object014
+    4300022: Object015
+    4300024: Object016
+    4300026: Tulip_002
+    4300028: Tulip_003
+    4300030: Tulip_004
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 1
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

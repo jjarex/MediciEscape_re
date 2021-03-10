@@ -96,7 +96,6 @@ public class Enemy : MonoBehaviour
     {
         anim.SetTrigger("Attack");
         player.GetComponent<PlayerMove>().ChangState(2);
-        Timer.instance.currentTime -= 30;
         StartCoroutine(ieGoHome());
     }
     IEnumerator ieGoHome()

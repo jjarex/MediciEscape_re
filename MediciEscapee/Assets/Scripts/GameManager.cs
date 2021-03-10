@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Timer.instance.min==59
 
         // 1. 태어날때 GameOver를 보이지 않게 하고싶다.
         gameOverUI.SetActive(false); //게임오브젝트를 켜고 끄는 기능
@@ -126,8 +126,15 @@ public class GameManager : MonoBehaviour
             MenuOn();
         if (menuOn)
         {
-            OnClickSetting();
-            OnClickMinimap();
+            SettingUI.SetActive(true);
+            QRcordUI.SetActive(true);
+            MinimapUI.SetActive(true);
+        }
+        else
+        {
+            SettingUI.SetActive(false);
+            QRcordUI.SetActive(false);
+            MinimapUI.SetActive(false);
         }
     }
     void MenuOn()

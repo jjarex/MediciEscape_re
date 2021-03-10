@@ -20,13 +20,13 @@ public class GameManager2 : MonoBehaviour
         spiderEnemySpeed = EnemySpider.instance.speed;
         peekabooEnemyCreateTime = EnemyPeekabooManager.instanse.createTime;
     }
-    void Update()
-    {
-        if (mainLight == false)
-            lightMain.GetComponent<Light>().enabled = false;
-        else
-            lightMain.GetComponent<Light>().enabled = true;
-    }
+    //void Update()
+    //{
+    //    if (mainLight == false)
+    //        lightMain.GetComponent<Light>().enabled = false;
+    //    else
+    //        lightMain.GetComponent<Light>().enabled = true;
+    //}
     //public SteamVR_Action_Boolean menu;
     //public GameObject gameMenuUI;
     //bool on;

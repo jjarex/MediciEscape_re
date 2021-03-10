@@ -12,7 +12,8 @@ public class Timer : MonoBehaviour
     public float currentTime;
     public bool pause;
     public int hour;
-    public  GameObject gameoverUI;
+    public int min;
+    //public  GameObject gameoverUI;
 
     public static Timer instance;
     private void Awake()
@@ -23,7 +24,7 @@ public class Timer : MonoBehaviour
     {
         currentTime = startTime * 60;
         pause = false;
-        gameoverUI.SetActive(false);
+       // gameoverUI.SetActive(false);
 
     }
     void Update()
@@ -31,9 +32,9 @@ public class Timer : MonoBehaviour
         if (pause == false)
             currentTime += Time.deltaTime;
         hour = 11;
-        int min = (int)(currentTime / 60);
-        if (min == 0)
-            hour++;
+        min = (int)(currentTime / 60);
+        if (min >= 60)
+            hour++; min -= 60;
         int sec = (int)(currentTime % 60);
 
         if (min < 10)
@@ -48,7 +49,7 @@ public class Timer : MonoBehaviour
 
         if (hour >= 12)
         {
-            gameoverUI.SetActive(true);
+            //gameoverUI.SetActive(true);
             //GAMEOVER
         }
 

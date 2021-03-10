@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     public GameObject gameOverUI;
     public GameObject lightMain;
     public static PlayerMove instance;
+    Color defalt;
     private void Awake()
     {
         instance = this;
@@ -33,8 +34,7 @@ public class PlayerMove : MonoBehaviour
     {
         catched = false;
         gameOverUI.SetActive(false);
-        lightMain.GetComponent<Light>().enabled = false;
-
+        defalt = lightMain.GetComponent<Light>().color;
     }
 
     void Update()
@@ -48,7 +48,7 @@ public class PlayerMove : MonoBehaviour
             case State.Die:
                 UpdateDie(); break;
         }
-        if (Timer.instance.hour == 12)
+        if (Timer.instance.hour >= 12)
         {
             state = State.Die;
         }
@@ -56,7 +56,6 @@ public class PlayerMove : MonoBehaviour
 
     private void UpdateDie()
     {
-        lightMain.GetComponent<Light>().enabled = true;
         gameOverUI.SetActive(true);
         lightMain.GetComponent<Light>().color = Color.black;
     }
@@ -64,14 +63,13 @@ public class PlayerMove : MonoBehaviour
     private void UpdateCatched()
     {
         //데미지 UI
-        lightMain.GetComponent<Light>().enabled = true;
         lightMain.GetComponent<Light>().color = Color.red;
+        Timer.instance.currentTime -= 30;
         Invoke("UpdateMove", 1);
     }
     private void UpdateMove()
     {
-        lightMain.GetComponent<Light>().enabled = false;
-
+        lightMain.GetComponent<Light>().color = defalt;
         state = State.Move;
         Vector2 dir2 = move.GetAxis(SteamVR_Input_Sources.LeftHand);
         //print(dir2);
